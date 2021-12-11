@@ -18,4 +18,16 @@ Router.get('/:date', async (req, resp) => {
     }
 })
 
+
+Router.get('/', async (req, resp) => {
+    try {
+        let availabeDays = await service.listAvailableDays();
+        resp.send(availabeDays)
+    } catch (error) {
+        resp.status(400).send({
+            erro: `${error}`
+        })
+    }
+})
+
 module.exports = Router

@@ -18,6 +18,10 @@ class AvailableService{
         db.inserir(movie)
     }
 
+    async listAvailableDays() {
+        db.listAvailableDays();
+    }
+
     alterar(id, filme){
         if(id < 0 )
             throw 'Filme não existe'
