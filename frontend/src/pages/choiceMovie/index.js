@@ -9,11 +9,12 @@ const api = new Api()
 
 export default function ChoiceMovie() {
     const [movies, setMovies] = useState([])
+    const [date, setDate] = useState('2021-12-14')
 
     console.log(movies)
 
     const listar = async () => {
-        let movies = await api.listar('2021-12-14');
+        let movies = await api.listar(date);
         setMovies(movies)
     }
           
